@@ -114,9 +114,35 @@ $ git <verb> --help
 $ man git-<verb>
 ```
 
-- `git init`: Permite crear un nuevo repositorio. Al ejecutar este comando, se creará un nuevo subdirectorio `.git` en tu directorio de trabajo actual. También se creará una nueva rama maestra (master).`.git` contiene toda la configuración de nuestro repositorio (versiones, ramas, etc.) y además, es invisible en nuestro directorio. Para saber si está presente en nuestro directorio o no, podemos ejecutar el comando `ls -al`. 
+- `git init`: Permite crear un nuevo repositorio de forma local. Al ejecutar este comando, se creará un nuevo subdirectorio `.git` en tu directorio de trabajo actual. También se creará una nueva rama maestra (master).`.git` contiene toda la configuración de nuestro repositorio (versiones, ramas, etc.) y además, es invisible en nuestro directorio. Para saber si está presente en nuestro directorio o no, podemos ejecutar el comando `ls -al`. 
 
 - `git status`: Muestra los diferentes estados de los archivos de tu directorio de trabajo y área de ensayo. 
+
+- `git checkout -- .`: Permite recuperar los archivos modificados o todo el repositorio a una versión anterior.
+
+- `git add`: Añade contenido del directorio de trabajo al área de ensayo (staging area o 'index') para la próxima instantánea. 
+
+Ejemplos de uso:
+
+```
+$ git add . // Rastrea todos los archivos modificados
+$ git add nombre_de_archivo.ext // Rastrea el archivo en mención
+```
+
+- `git commit`: Captura una instantánea de los cambios preparados en ese momento del proyecto. Las instantáneas confirmadas pueden considerarse como versiones "seguras" de un proyecto. Antes de la ejecución de `git commit`, se utiliza el comando `git add`.
+
+  **Opciones comunes:**
+    - `git commit`: Confirma la instantánea preparada. El comando abrirá un editor de texto que te pedirá un mensaje para la confirmación. Una vez escrito el mensaje, guarda el archivo y cierra el editor para crear la confirmación.
+    - `git commit -a`: Confirma una instantánea de todos los cambios del directorio de trabajo. Solo incluye modificaciones a los archivos con seguimiento.
+    - `git commit -m "commit message"`: Comando de atajo que crea inmediatamente una confirmación con un mensaje de confirmación en línea. Es decir, se omitirá la solicitud de editor de texto.
+    - `git commit -am "commit message"`: Combina las opciones -a y -m. Esta combinación crea inmediatamente una confirmación de todos los cambios preparados y aplica un mensaje de confirmación en línea.
+    - `git commit --amend`: Permite modificar la última confirmación. En vez de crear una nueva confirmación, los cambios preparados se añadirán a la confirmación anterior. Este comando abrirá el editor de texto configurado del sistema y te pedirá que cambies el mensaje de confirmación especificado anteriormente.
+
+
+
+
+
+
 
 
 
