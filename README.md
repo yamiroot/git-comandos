@@ -1,4 +1,4 @@
-<p align="center"><a href="img/git-logo.png"><img src="img/git-logo.png" width=80px></a></p>
+<p align="center"><a href="img/git-logo.png"><img src="img/git-logo.png" width=150px height=90px></a></p>
 <h1 align="center">Comandos Git</h1>
 
 
@@ -108,13 +108,10 @@ $ git config --list
 
 ### Comandos
 
-- `git help`: Comando de ayuda. Te permite ver la página del manual de Git. Otros comandos que te permiten lo mismo, son:
+- `git help`: Comando de ayuda. Te permite ver la página del manual de Git. 
 
-```
-$ git help <verb>
-$ git <verb> --help
-$ man git-<verb>
-```
+     **Opciones comunes:**
+     - `git help <command>`, `git <command> --help`, `man git-<command>`: Permite ver el manual del comando especificado.
 
 - `git init`: Permite crear un nuevo repositorio de forma local. Al ejecutar este comando, se creará un nuevo subdirectorio `.git` en tu directorio de trabajo actual. También se creará una nueva rama maestra (master).`.git` contiene toda la configuración de nuestro repositorio (versiones, ramas, etc.) y además, es invisible en nuestro directorio. Para saber si está presente en nuestro directorio o no, podemos ejecutar el comando `ls -al`. 
 
