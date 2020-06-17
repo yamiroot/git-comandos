@@ -79,24 +79,44 @@ Git utilizará estos datos para la confirmación de cambios (commits).
 - Configura tu nombre de usuario con el siguiente comando:
 
 ```
-git config --global user.name miUserName
+$ git config --global user.name miUserName
 ```
 
 - Configura tu correo electrónico con el siguiente comando:
 
 ```
-git config --global user.email miemail@domain.com
+$ git config --global user.email miemail@domain.com
 ```
 
-Para visualizar nuestra lista de configuraciones podemos hacerlo con el siguiente comando:
+Para visualizar nuestra configuración podemos hacerlo con el siguiente comando:
 
 ```
-git config --list
+$ git config --global -e
 ```
 
+Para visualizar nuestra lista de configuraciones utilizemos el siguiente comando:
 
+```
+$ git config --list
+```
 
+#### Nota:
+- Para Windows y MAC puedes usar la aplicación de escritotio de Github, [Github Desktop](https://desktop.github.com/) que es una Interfaz Gráfica de Usuario (GUI, por sus siglas en inglés) diseñada para facilitar el uso de Git.
+- Para Linux puede usar la aplicación de escritorio [Git Kraken](https://www.gitkraken.com/), es opensource y multiplataforma.
 
+### Comandos
+
+- `git help`: Comando de ayuda. Te permite ver la página del manual de Git. Otros comandos que te permiten lo mismo, son:
+
+```
+$ git help <verb>
+$ git <verb> --help
+$ man git-<verb>
+```
+
+- `git init`: Permite crear un nuevo repositorio. Al ejecutar este comando, se creará un nuevo subdirectorio `.git` en tu directorio de trabajo actual. También se creará una nueva rama maestra (master).`.git` contiene toda la configuración de nuestro repositorio (versiones, ramas, etc.) y además, es invisible en nuestro directorio. Para saber si está presente en nuestro directorio o no, podemos ejecutar el comando `ls -al`. 
+
+- `git status`: Muestra los diferentes estados de los archivos de tu directorio de trabajo y área de ensayo. 
 
 
 
