@@ -1,4 +1,4 @@
-<p align="center"><a href="https://ugeek.github.io/blog/images-blog/git.png"><img src="./public/logo.png" width=80px></a></p>
+<p align="center"><a href="img/git-logo.png"><img src="img/git-logo.png" width=80px></a></p>
 <h1 align="center">Comandos Git</h1>
 
 
@@ -21,6 +21,8 @@ Es nuestro directorio de trabajo.
 - Staging area:
 Es el espacio en donde se encuentran los archivos a los que Git les debe hacer seguimiento y 
 que en el algún momento se convertirán en una nueva versión del proyecto
+
+<br><p align="center"><img src="img/git-map.png"></p><br>
 
 ### Repositorio remoto
 Es nuestro repositorio en alguna plataforma de almacenanmiento de proyectos. Por ejemplo: Github, 
@@ -122,12 +124,9 @@ $ man git-<verb>
 
 - `git add`: Añade contenido del directorio de trabajo al área de ensayo (staging area o 'index') para la próxima instantánea. 
 
-Ejemplos de uso:
-
-```
-$ git add . // Rastrea todos los archivos modificados
-$ git add nombre_de_archivo.ext // Rastrea el archivo en mención
-```
+  **Opciones comunes:**
+    - `git add .`: Rastrea todos los archivos modificados.
+    - `git add nombre_de_archivo.ext`:  Rastrea el archivo en mención.
 
 - `git commit`: Captura una instantánea de los cambios preparados en ese momento del proyecto. Las instantáneas confirmadas pueden considerarse como versiones "seguras" de un proyecto. Antes de la ejecución de `git commit`, se utiliza el comando `git add`.
 
@@ -138,8 +137,7 @@ $ git add nombre_de_archivo.ext // Rastrea el archivo en mención
     - `git commit -am "commit message"`: Combina las opciones -a y -m. Esta combinación crea inmediatamente una confirmación de todos los cambios preparados y aplica un mensaje de confirmación en línea.
     - `git commit --amend`: Permite modificar la última confirmación. En vez de crear una nueva confirmación, los cambios preparados se añadirán a la confirmación anterior. Este comando abrirá el editor de texto configurado del sistema y te pedirá que cambies el mensaje de confirmación especificado anteriormente.
 
-
-
+<br><p align="center"><img src="img/commit.jpeg"></p><br>
 
 
 
