@@ -90,16 +90,12 @@ $ git config --global user.name miUserName
 $ git config --global user.email miemail@domain.com
 ```
 
-Para visualizar nuestra configuración podemos hacerlo con el siguiente comando:
-
-```
-$ git config --global -e
-```
-
 Para visualizar nuestra lista de configuraciones utilizemos el siguiente comando:
 
 ```
 $ git config --list
+$ git config --global -e
+$ git config --global -l
 ```
 
 #### Nota:
@@ -117,13 +113,25 @@ $ git config --list
 
 - `git status`: Muestra los diferentes estados de los archivos de tu directorio de trabajo y área de ensayo. 
 
+    **Opciones comunes:**
+     - `git status -s`: Muestra los estados de los archivos de forma resumida.
+     - `git status -s -b`, `git status -sb`: Añade la rama(branch) de trabajo.
+     
+     #### Observación: 
+     - `--`: Indica que el comando que le sigue es una palabra.
+     - `-`: Indica que el comando o los comandos que le siguen son letras tomadas de forma independiente.
+
 - `git checkout -- .`: Permite recuperar los archivos modificados o todo el repositorio a una versión anterior.
 
 - `git add`: Añade contenido del directorio de trabajo al área de ensayo (staging area o 'index') para la próxima instantánea. 
 
   **Opciones comunes:**
-    - `git add .`: Rastrea todos los archivos modificados.
-    - `git add nombre_de_archivo.ext`:  Rastrea el archivo en mención.
+    - `git add .`, `git add -A`, `git add --all`: Rastrea todos los archivos modificados.
+    - `git add <lista de archivos>`:  Rastrea los archivos en mención.
+    - `git add nombre_carpeta/`:  Envía al `staging area` todos los archivos incluidos en la carpeta especificada.
+    - `git add nombre_carpeta/*.ext`:  Envía al `staging area` todos los archivos de la carpeta que cumplan con la extensión especificada.
+    - `git add *.ext`:  Envía al `staging area` todos los archivos del directorio actual que cumplan con la extensión especificada.
+    - `git add "*.ext"`:  Envía al `staging area` todos los archivos de todo el proyecto que cumplan con la extensión especificada.
 
 - `git commit`: Captura una instantánea de los cambios preparados en ese momento del proyecto. Las instantáneas confirmadas pueden considerarse como versiones "seguras" de un proyecto. Antes de la ejecución de `git commit`, se utiliza el comando `git add`.
 
@@ -136,8 +144,32 @@ $ git config --list
 
 <br><p align="center"><img src="img/commit.jpeg"></p><br>
 
+- `git log`: Permite examinar la secuencia de commits (confirmaciones) que hemos realizado en la historia de un proyecto. 
+
+    **Opciones comunes:**
+     - `git log --oneline`: Permite ver los commits en una línea.
+     - `git log --oneline --graph`: Añade un pequeño gráfico ASCII mostrando tu historial de ramificaciones y uniones.
+     - `git log --oneline --decorate --graph`: Añade asteriscos al mostrar tu historial de commits.
+     
+    #### Observación: 
+    Al visualizar el historial de commits con `git log`, el commit que contenga el enunciado `HEAD` representa el último commit.
+
+- `git reset`: Permite deshacer cambios. Tiene tres formas de invocación principales. Estas formas se corresponden con argumentos de líneas de comandos: --soft, --mixed, --hard. Cada uno de los tres argumentos se corresponde con los tres mecanismos de gestión de estados internos de Git: el árbol de confirmaciones (`HEAD`), el índice del entorno de ensayo y el directorio de trabajo. Para más información, puede dar click [aquí](https://www.atlassian.com/es/git/tutorials/undoing-changes/git-reset).
+
+    **Opciones comunes:**
+     - `git reset *.ext`: Excluye del último commit los archivos que cumplan con la extensión especificada.
 
 
+#### Nota:
+El uso de algunos comandos nos redirige al programa `less`, que ocasiona que la salida sea desplazable. Podemos salir de este programa con los siguientes comandos: `:q`, `:z` y `Ctrl + z`.
 
+### Creando un alias a nuestros comandos:
+
+- `git config --global alias.nombre_de_alias`: Permite crear un alias para comandos que posean varios parámetros.
+
+**Ejemplos:**
+
+- `git config --global alias.lg "log --oneline --decorate --all --graph"`: Cuyo alias sería `git lg`.
+- `git config --global alias.s "status -s -b"`: Cuyo alias sería `git s`.
 
 
